@@ -5,12 +5,13 @@ import Profile from "../pages/Profile/Profile";
 import NuevoEvento from "../pages/NuevoEvento/NuevoEvento";
 import InvitarPersonas from "../pages/InvitarPersonas/InvitarPersonas";
 import ListaEventos from "../pages/ListaEventos/ListaEventos";
+import Borrar from "../pages/NuevoEvento/NuevoEvento";
 
 const Router = () => (
   <BrowserRouter>
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={<Borrar />} />
         <Route path="/profile/" element={<Profile />} />
         <Route path="/NuevoEvento/" element={<NuevoEvento />} />
         <Route path="/InvitarPersonas/" element={<InvitarPersonas />} />
