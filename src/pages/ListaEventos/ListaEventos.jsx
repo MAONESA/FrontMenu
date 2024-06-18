@@ -1,5 +1,4 @@
 const ListaEventos = () => {
-  return <div>Lista de Eventos</div>;
+  return <div>Liste de eventos</div>;
 };
-
 export default ListaEventos;
