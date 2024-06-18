@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { getEvent } from "../../app/service/Event";
 const ListaEventos = () => {
 
-  const [event, setEvent] = useState('');
+  const [event, setEvent] = useState([]);
 
   useEffect(() => {
     renderEvent();
@@ -18,10 +18,11 @@ const ListaEventos = () => {
 
   return (
     <div>
+      <h2>Lista de eventos:</h2>
       <ul>
         {event?.map(e => (
           <div key={e.id}>
-            <li>{e.eventName}</li>
+            <li>Nombre: {e.eventName} ------ Fecha: {e.date}</li>
           </div>)
         )}
       </ul>

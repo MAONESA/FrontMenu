@@ -5,4 +5,4 @@ const instance = axios.create({ baseURL: 'http://localhost:8080/event' });
 export const createEvent = (obj) => instance.post('/', obj);
 
 // READ
-export const getEvent = async () => await instance.get();
+export const getEvent = async () => await instance.get('/');
