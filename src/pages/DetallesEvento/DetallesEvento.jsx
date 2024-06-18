@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import eventosimg from "../../assets/eventos.jpg";
+// import eventosimg from "../../assets/eventos.jpg";
 import { Container, Article } from "./DetallesEvento.styles";
 import { useParams } from "react-router-dom";
 import { getEventById } from "../../app/service/Event";
