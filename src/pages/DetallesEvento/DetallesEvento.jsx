@@ -1,4 +1,8 @@
 const DetallesEvento = () => {
-  return <div>DetallesEvento</div>;
+  return (
+    <div>
+      <h1>DetallesEvento</h1>
+    </div>
+  );
 };
 export default DetallesEvento;
