@@ -7,7 +7,7 @@ const Router = () => (
     <Routes>
         <Route element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/tasks/" element={<Profile />} />
+            <Route path="/profile/" element={<Profile />} />
             <Route path="*" element={<div>404</div>} />
         </Route>
     </Routes>
