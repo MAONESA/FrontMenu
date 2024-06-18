@@ -2,11 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   background: #f0f2f5;
 }
 
 .profile-card {
   width: 400px;
+  height: 400px;
   padding: 20px;
 }
+
+/* 
+img {
+  width: 200px;
+  height: 100px;
+} */
