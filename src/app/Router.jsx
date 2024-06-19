@@ -14,8 +14,7 @@ const Router = () => (
     <Routes>
       <Route >
         <Route index element={<Home />} />
-        <Route path="/profile/" element={<LayoutItem />} />
-        <Route path="/profile/" element={<Profile />} />
+        <Route path="/profile/" element={<Profile />} element={<LayoutItem />} />
         <Route path="/register/" element={<Register />} />
         <Route path="/nuevoevento/" element={<NuevoEvento />} />
         <Route path="/invitarpersonas/" element={<InvitarPersonas />} />
