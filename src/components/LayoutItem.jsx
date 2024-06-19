@@ -1,12 +1,11 @@
 
 import { Link, Outlet } from 'react-router-dom';
-import { Avatar } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import { UserOutlined, PlusOutlined } from '@ant-design/icons';
+import { UserOutlined, PlusOutlined, HomeOutlined } from '@ant-design/icons';
 
 import './styles/style.css'
 
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 
 
 const LayoutItem = () => {
@@ -17,11 +16,9 @@ const LayoutItem = () => {
     return (
         <Layout>
             <Header className="header">
-                <div className="demo-logo" />
                 <Menu
-                    theme="dark"
+                    theme="orange"
                     mode="horizontal"
-                    defaultSelectedKeys={['2']}
                     style={{
                         flex: 1,
                         minWidth: 0,
@@ -32,11 +29,11 @@ const LayoutItem = () => {
                         <Link to="nuevoevento" title='añadir'><PlusOutlined /></Link>
                     </li>
                     <li>
-                        <Link to="listaeventos" title='eventos'><PlusOutlined /></Link>
+                        <Link to="listaeventos" title='eventos'><HomeOutlined /></Link>
 
                     </li>
                     <li>
-                        <Link to="/profile"><Avatar shape="square" title="Profile" icon={<UserOutlined />} /></Link>
+                        <Link to="/profile"><UserOutlined /></Link>
                     </li>
 
                 </ul>
@@ -76,15 +73,24 @@ const LayoutItem = () => {
                         style={{
                             padding: 24,
                             margin: 0,
-                            minHeight: 280,
+                            minHeight: 620,
                             background: colorBgContainer,
                             borderRadius: borderRadiusLG,
                         }}
                     >
                         <Outlet />
                     </Content>
+
                 </Layout>
+
             </Layout>
+            <Footer
+                style={{
+                    textAlign: 'center',
+                }}
+            >
+                Ant Design ©{new Date().getFullYear()} Created by Ant UED
+            </Footer>
         </Layout>
     );
 };
