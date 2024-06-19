@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Article } from "./DetallesEvento.styles";
 import { useParams } from "react-router-dom";
-import { getEventById } from "../../app/service/Event";
+import { getEventById } from "../../app/services/Event";
 
 const DetallesEvento = () => {
   const [detallesEvento, setDetallesEvento] = useState('');
