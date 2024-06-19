@@ -7,7 +7,6 @@ import InvitarPersonas from "../pages/InvitarPersonas/InvitarPersonas";
 import ListaEventos from "../pages/ListaEventos/ListaEventos";
 import DetallesEvento from "../pages/DetallesEvento/DetallesEvento";
 import Register from "../pages/Home/Register";
-import Borrar from "../pages/NuevoEvento/NuevoEvento";
 
 const Router = () => (
   <BrowserRouter>
