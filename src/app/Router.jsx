@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "../components/Layout";
+import LayoutItem from "../components/LayoutItem";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile/Profile";
 import NuevoEvento from "../pages/NuevoEvento/NuevoEvento";
@@ -9,11 +9,12 @@ import DetallesEvento from "../pages/DetallesEvento/DetallesEvento";
 import Register from "../pages/Home/Register";
 
 const Router = () => (
+
   <BrowserRouter>
     <Routes>
-      <Route element={<Layout />}>
+      <Route >
         <Route index element={<Home />} />
-        <Route path="/profile/" element={<Profile />} />
+        <Route path="/profile/" element={<Profile />} element={<LayoutItem />} />
         <Route path="/register/" element={<Register />} />
         <Route path="/nuevoevento/" element={<NuevoEvento />} />
         <Route path="/invitarpersonas/" element={<InvitarPersonas />} />
