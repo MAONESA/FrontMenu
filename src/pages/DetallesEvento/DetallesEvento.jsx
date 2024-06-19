@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-import eventosimg from "../../assets/eventos.jpg";
 import { useState, useEffect } from "react";
 // import eventosimg from "../../assets/eventos.jpg";
 import { Container, Article, Message } from "./DetallesEvento.styles";
