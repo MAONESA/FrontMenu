@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import eventosimg from "../../assets/eventos.jpg";
 import { Container, Article, Message } from "./DetallesEvento.styles";
 import { useParams } from "react-router-dom";
-import { getEventById } from "../../app/service/Event";
+import { getEventById } from "../../app/services/Event";
 
 const DetallesEvento = () => {
   const [detallesEvento, setDetallesEvento] = useState({});
