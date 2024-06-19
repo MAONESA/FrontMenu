@@ -9,6 +9,7 @@ import DetallesEvento from "../pages/DetallesEvento/DetallesEvento";
 import Register from "../pages/Home/Register";
 
 const Router = () => (
+
   <BrowserRouter>
     <Routes>
       <Route element={<Layout />}>
