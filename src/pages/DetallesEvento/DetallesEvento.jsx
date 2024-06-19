@@ -1,33 +1,34 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import eventosimg from "../../assets/eventos.jpg";
-import { Container, Article } from "./DetallesEvento.styles";
+import { Container, Article, Message } from "./DetallesEvento.styles";
 import { useParams } from "react-router-dom";
 import { getEventById } from "../../app/service/Event";
 
 const DetallesEvento = () => {
-  const [detallesEvento, setDetallesEvento] = useState();
+  const [detallesEvento, setDetallesEvento] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
     getEventById(id).then((res) => {
       setDetallesEvento(res.data);
-      console.log(res.data);
+      console.log(res.data); // Verifica aquí los datos que recibes
     });
   }, [id]);
 
   return (
     <Container>
       <h1>Detalles del Evento</h1>
-      <Article>
-        {/* <img src={eventosimg} /> */}
-        <h2>Evento X</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam sed
-          suscipit, ea fugiat ducimus delectus ex velit neque corrupti, vitae
-          odit numquam maxime corporis quas veritatis illum labore sunt harum?
-        </p>
-      </Article>
+      {detallesEvento && detallesEvento.eventName ? (
+        <Article>
+          {/* <img src={eventosimg} alt="Evento" /> */}
+          <h2>{detallesEvento.eventName}</h2>
+          <p>{detallesEvento.descripcion || "Descripción del evento."}</p>
+        </Article>
+      ) : (
+        <Message>No hay ningún evento disponible.</Message>
+      )}
     </Container>
   );
 };
+
 export default DetallesEvento;

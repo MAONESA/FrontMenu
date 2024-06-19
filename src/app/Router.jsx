@@ -18,7 +18,7 @@ const Router = () => (
         <Route path="/nuevoevento/" element={<NuevoEvento />} />
         <Route path="/invitarpersonas/" element={<InvitarPersonas />} />
         <Route path="/listaeventos/" element={<ListaEventos />} />
-        <Route path="/detallesevento/" element={<DetallesEvento />} />
+        <Route path="/detallesevento/:id" element={<DetallesEvento />} />
         <Route path="*" element={<div>404</div>} />
       </Route>
     </Routes>
