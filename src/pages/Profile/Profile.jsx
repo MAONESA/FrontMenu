@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { EditOutlined, EllipsisOutlined, SettingOutlined, SyncOutlined } from '@ant-design/icons';
 import { Avatar, Card, message } from 'antd';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ const Profile = () => {
   useEffect(() => {
     // Replace with the actual user ID or retrieve it from authentication context
     const userId = 1;
-    axios.get(`http://localhost:8080/user/${userId}`)
+    axios.get(`http://localhost:8080/event${userId}`)
       .then(response => {
         setUser(response.data);
       })
@@ -22,7 +22,7 @@ const Profile = () => {
   }, []);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div><SyncOutlined spin /></div>;
   }
 
   return (
