@@ -12,16 +12,16 @@ const Router = () => (
 
   <BrowserRouter>
     <Routes>
-      <Route >
-        <Route index element={<Home />} />
-        <Route path="/profile/" element={<Profile />} element={<LayoutItem />} />
-        <Route path="/register/" element={<Register />} />
-        <Route path="/nuevoevento/" element={<NuevoEvento />} />
-        <Route path="/invitarpersonas/" element={<InvitarPersonas />} />
-        <Route path="/listaeventos/" element={<ListaEventos />} />
-        <Route path="/detallesevento/:id" element={<DetallesEvento />} />
-        <Route path="*" element={<div>404</div>} />
+      <Route path="/" element={<Home />} />
+      <Route element={<LayoutItem />}>
+        <Route path="profile" element={<Profile />} />
+        <Route path="register" element={<Register />} />
+        <Route path="nuevoevento" element={<NuevoEvento />} />
+        <Route path="invitarpersonas" element={<InvitarPersonas />} />
+        <Route path="listaeventos" element={<ListaEventos />} />
+        <Route path="detallesevento/:id" element={<DetallesEvento />} />
       </Route>
+      <Route path="*" element={<div>Error 404</div>} />
     </Routes>
   </BrowserRouter>
 );
