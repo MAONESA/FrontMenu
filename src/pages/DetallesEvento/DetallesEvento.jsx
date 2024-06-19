@@ -11,7 +11,7 @@ const DetallesEvento = () => {
   useEffect(() => {
     getEventById(id).then((res) => {
       setDetallesEvento(res.data);
-      console.log(res.data); // Verifica aquí los datos que recibes
+      console.log(res.data);
     });
   }, [id]);
 
