@@ -10,8 +10,8 @@ const ListaEventos = () => {
     renderEvent();
   }, [])
 
-  const renderEvent = () => {
-    getEvent().then((res => {
+  const renderEvent = async () => {
+    await getEvent().then((res => {
       console.log(res.data);
       setEvent(res.data);
     }))
@@ -27,6 +27,7 @@ const ListaEventos = () => {
           </div>)
         )}
       </ul>
+      <Link to={'/nuevoevento'}><button>Crear Evento</button></Link>
     </div>
   )
 }

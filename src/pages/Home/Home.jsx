@@ -1,31 +1,47 @@
-import {Link} from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from "react";
 import './Home.styles.css'
+import { loginUser } from '../../app/services/user';
 
 const Home = () => {
-const [username,setUsername]=useState();
-const [mail,setMail]=useState();
-const [password,setPassword]=useState();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await loginUser({ nickname: username, password });
+      if (response.status === 200) {
+        navigate('/listaeventos');
+      } else {
+        alert('Usuario o contraseña incorrectos');
+      }
+    } catch (err) {
+      alert('Usuario o contraseña incorrectos');
+    }
+  }
+
 
   return (
     <div className="container">
-<div className='login-container'>
-  <div className='top'>
-<h1 className='title'>EVENTS</h1>
-<h4>Introduce tus credenciales:</h4>
-</div>
-<form action="/login" method='post'>
+      <div className='login-container'>
+        <div className='top'>
+          <h1 className='title'>EVENTS</h1>
+          <h4>Introduce tus credenciales:</h4>
+        </div>
+        <form action="/login" method='post'>
 
-<input type="text" placeholder='Username'/>
+          <input type="text" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
 
-<input type="text" placeholder='Password'/>
-<button className='submit' onClick={()=>createUsuario({username,mail,password})}>Enviar</button>
-<p>No tienes cuenta? <Link to="register">Pulsa aquí!</Link></p></form>
-</div>
-</div>
+          <input type="text" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+          <button className='submit' onClick={handleLogin}>Enviar</button>
+          <p>No tienes cuenta? <Link to="register">Pulsa aquí!</Link></p></form>
+      </div>
+    </div>
 
 
-   
+
   )
 };
 
