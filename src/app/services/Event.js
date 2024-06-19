@@ -1,7 +1,6 @@
-import axios from 'axios';
-const instance = axios.create({ baseURL: 'http://localhost:8080/event' });
+import instance from "./api";
 
 // READ
-export const getEvent = async () => await instance.get('/');
+export const getEvent = async () => await instance.get('event/');
 
-export const getEventById = async (id) => await instance.get(`/${id}`);
+export const getEventById = async (id) => await instance.get(`event/${id}`);
