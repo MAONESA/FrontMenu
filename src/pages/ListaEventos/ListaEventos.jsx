@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { getEvent } from "../../app/service/Event";
+import { getEvent } from "../../app/services/Event";
 import { Link } from "react-router-dom";
 const ListaEventos = () => {
 
