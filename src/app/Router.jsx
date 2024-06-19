@@ -12,7 +12,7 @@ import Borrar from "../pages/NuevoEvento/NuevoEvento";
 const Router = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Borrar />} />
       <Route path="register" element={<Register />} />
       <Route element={<LayoutItem />}>
         <Route path="profile" element={<Profile />} />
