@@ -5,6 +5,8 @@ import Profile from "../pages/Profile/Profile";
 import NuevoEvento from "../pages/NuevoEvento/NuevoEvento";
 import InvitarPersonas from "../pages/InvitarPersonas/InvitarPersonas";
 import ListaEventos from "../pages/ListaEventos/ListaEventos";
+import DetallesEvento from "../pages/DetallesEvento/DetallesEvento";
+import Register from "../pages/Home/Register";
 import Borrar from "../pages/NuevoEvento/NuevoEvento";
 
 const Router = () => (
@@ -13,9 +15,11 @@ const Router = () => (
       <Route element={<Layout />}>
         <Route index element={<Borrar />} />
         <Route path="/profile/" element={<Profile />} />
-        <Route path="/NuevoEvento/" element={<NuevoEvento />} />
-        <Route path="/InvitarPersonas/" element={<InvitarPersonas />} />
-        <Route path="/ListaEventos/" element={<ListaEventos />} />
+        <Route path="/register/" element={<Register />} />
+        <Route path="/nuevoevento/" element={<NuevoEvento />} />
+        <Route path="/invitarpersonas/" element={<InvitarPersonas />} />
+        <Route path="/listaeventos/" element={<ListaEventos />} />
+        <Route path="/detallesevento/" element={<DetallesEvento />} />
         <Route path="*" element={<div>404</div>} />
       </Route>
     </Routes>
