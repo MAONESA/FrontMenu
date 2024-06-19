@@ -17,10 +17,14 @@ export const Formulario = styled.div`
 
 export const Box = styled.div`
     margin: 10px;
+    display: flex;
+    flex-direction: ${({direction}) => direction ? direction : 'row'};
+    gap: 10px;
     .participantes{
         border: 1px solid black;
-        border-radius: 15px;
+        border-radius: 5px;
         width: 200px;
         height: 200px;
     }
 `
+

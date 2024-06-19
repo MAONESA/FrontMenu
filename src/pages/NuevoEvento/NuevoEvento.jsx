@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Box, Formulario, Titulo } from "./NuevoEvento.styles";
 
 const NuevoEvento = () => {
+  const direction = 'column';
+  const [perfiles, setPerfiles] = useState([])
+
 
   return <div>
     <Titulo>
@@ -19,13 +23,20 @@ const NuevoEvento = () => {
   <label htmlFor="locationEvent">Localización del Evento:</label>
   <input type="text" id="locationEvent"/>
   </Box>
-  <Box>
+  <Box direction={direction}>
+  <label htmlFor="descriptionEvent">Descripción del Evento:</label>
+  <textarea id="descriptionEvent" rows={10} cols={50}/>
+  </Box>
+  <Box direction={direction}>
   <label htmlFor="usersEvent">Participantes:</label>
   <div id="usersEvent" className="participantes">
+    {/* {perfiles.map{perfil=>{
+
+    }}} */}
+  {/* <button style={{width: '100%'}} onClick={()=>{inscribirPerfil}}>+</button> */}
   </div>
   </Box>
   </Formulario>
-  <button>+</button>
 </div>
 };
 export default NuevoEvento;
