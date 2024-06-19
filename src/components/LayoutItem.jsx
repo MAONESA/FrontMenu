@@ -2,7 +2,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined, PlusOutlined } from '@ant-design/icons';
 
 import './styles/style.css'
 
@@ -29,8 +29,16 @@ const LayoutItem = () => {
                 />
                 <ul className="nav-links">
                     <li>
+                        <Link to="nuevoevento" title='añadir'><PlusOutlined /></Link>
+                    </li>
+                    <li>
+                        <Link to="listaeventos" title='eventos'><PlusOutlined /></Link>
+
+                    </li>
+                    <li>
                         <Link to="/profile"><Avatar shape="square" title="Profile" icon={<UserOutlined />} /></Link>
                     </li>
+
                 </ul>
             </Header>
             <Layout>
