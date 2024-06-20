@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { EditOutlined, EllipsisOutlined, SettingOutlined, SyncOutlined } from '@ant-design/icons';
 import { Avatar, Card, message } from 'antd';
-import iconoPerfil from './img/1.png'
-import axios from 'axios';
+import iconoPerfil from './img/1.png';
+import { getUser } from '../../app/services/User';
 
 const { Meta } = Card;
 
@@ -14,15 +14,13 @@ const Profile = () => {
   }, []);
 
   const fetchUser = () => {
-    axios.get(`http://localhost:8080/user/`)
+    getUser()
       .then(response => {
-        // En este punto, response.data debería ser un array de usuarios si la respuesta es correcta
-        // Para mostrar solo el primer usuario, asignamos response.data[0] a setUser
-        setUser(response.data[6]); // El usuario seleccionado !!!!!!
+        setUser(response.data[1]); // El usuario seleccionado
       })
       .catch(error => {
-        console.error('Error conectar usuario:', error);
-        message.error('Fallo de carga');
+        // console.error('Error conectar usuario:', error);
+        message.error('Fallo de carga', error);
       });
   };
 
@@ -30,7 +28,6 @@ const Profile = () => {
     return <div><SyncOutlined spin /></div>;
   }
 
-  // Renderizamos el usuario único
   return (
     <Card
       key={user.id} // Asegúrate de tener una clave única para el usuario
@@ -51,10 +48,12 @@ const Profile = () => {
       ]}
     >
       <Meta
-        avatar={<Avatar
-          size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
-          icon={iconoPerfil}
-        />}
+        avatar={
+          <Avatar
+            size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+            src={iconoPerfil} // Usa src para establecer la imagen
+          />
+        }
         title={user.nickname} // Asegúrate de usar user.nickname si user es un objeto de usuario
         description={user.email} // Asegúrate de usar user.email si user es un objeto de usuario
       />
