@@ -7,10 +7,17 @@ const Register = () => {
   const [username, setUsername] = useState();
   const [mail, setMail] = useState();
   const [password, setPassword] = useState();
+  const [showPassword, setShowPassword] = useState(false);
+
 
   const handleRegister = async () => {
     await createUser({ nickname: username, email: mail, password })
   }
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="container">
       <div className='login-container'>
@@ -25,8 +32,16 @@ const Register = () => {
 
           <input type="text" placeholder='Mail' onChange={e => setMail(e.target.value)} />
 
-          <input type="text" placeholder='Password' onChange={e => setPassword(e.target.value)} />
-
+          <div className='password-container'>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder='Password'
+              onChange={e => setPassword(e.target.value)}
+            />
+            <span className='toggle-password' onClick={togglePasswordVisibility}>
+              {showPassword ? '🙈' : '👁️'}
+            </span>
+          </div>
           <Link to={'/'}><button className='submit' onClick={handleRegister}>Enviar</button></Link>
           <p>Ya tienes una cuenta? <Link to="/">Pulsa aquí!</Link></p></form>
       </div>

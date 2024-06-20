@@ -20,6 +20,8 @@ const DetallesEvento = () => {
       <Article>
         <h2>{detallesEvento.eventName}</h2>
         <p>Fecha: {detallesEvento.date}</p>
+        <p>Localidad: {detallesEvento.locationEvent}</p>
+        <p>Descripción: {detallesEvento.descriptionEvent}</p>
       </Article>
     </Container>
   );
