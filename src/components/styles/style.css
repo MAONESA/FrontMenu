@@ -1,7 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
 }
+
 
 .nav-links {
   list-style: none;

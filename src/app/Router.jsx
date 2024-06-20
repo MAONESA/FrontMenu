@@ -7,6 +7,7 @@ import InvitarPersonas from "../pages/InvitarPersonas/InvitarPersonas";
 import ListaEventos from "../pages/ListaEventos/ListaEventos";
 import DetallesEvento from "../pages/DetallesEvento/DetallesEvento";
 import Register from "../pages/Home/Register";
+// import User from "../pages/Profile/User";
 
 const Router = () => (
   <BrowserRouter>
@@ -15,6 +16,9 @@ const Router = () => (
       <Route path="register" element={<Register />} />
       <Route element={<LayoutItem />}>
         <Route path="profile" element={<Profile />} />
+
+        {/* <Route path="user" element={<User />}></Route> */}
+
         <Route path="nuevoevento" element={<NuevoEvento />} />
         <Route path="invitarpersonas" element={<InvitarPersonas />} />
         <Route path="listaeventos" element={<ListaEventos />} />

@@ -1,16 +1,13 @@
-import instance from "./api";
+import instance from './api';
 
 
-//READ
+// READ
+export const getUser = async () => await instance.get('user/')
 
-export const getUsers = async () => await instance.get('user/');
+//CREATE;
 
-
-//CREATE
-
-export const createUser = async (obj) => await instance.post('user/', obj);
+export const createUser = async (obj) => await instance.post('user/', obj)
 
 //LOGIN
 
-export const loginUser = async (obj) => await instance.post('user/login', obj);
-
+export const loginUser = async (obj) => await instance.post('user/login', obj)
