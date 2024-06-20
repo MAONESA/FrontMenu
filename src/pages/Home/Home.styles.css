@@ -3,11 +3,13 @@
     src: url('./secrcode.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
-  }
-  .title{
+}
+
+.title {
     font-family: Event;
     padding: 15px;
-  }
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -17,6 +19,7 @@
     background-color: #f0f2f5;
     font-family: Helvetica;
 }
+
 .login-container {
     background-color: #fff;
     padding: 20px;
@@ -25,17 +28,21 @@
     width: 400px;
     text-align: center;
 }
+
 .login-container h2 {
     margin-bottom: 20px;
 }
+
 .login-container input[type="text"],
-.login-container input[type="password"] {
+.login-container input[type="password"],
+.login-container input[type="text"].show-password {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .login-container button {
     width: 50%;
     padding: 10px;
@@ -45,10 +52,31 @@
     color: #000000;
     font-size: 16px;
 }
+
 .login-container button:hover {
     background-color: #ffffff;
 }
-.login-container p{
+
+.login-container p {
     margin-bottom: 1px;
 }
 
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-container input {
+    width: calc(100% - 40px);
+    padding-right: 40px;
+    /* Espacio para el ícono */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    user-select: none;
+}
